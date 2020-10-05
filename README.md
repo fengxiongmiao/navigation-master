@@ -1,6 +1,6 @@
 # navigation-master
 
-> 导航主站demo项目
+> 导航主站demo项目（前端 vue）
 
 ## Build Setup
 
