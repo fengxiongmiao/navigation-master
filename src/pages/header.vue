@@ -42,19 +42,6 @@
 </script>
 
 <style >
-  html{
-    height:100%;
-    width:100%;
-  }
-  body{
-    padding:0;
-    margin:0;
-    border:0;
-    background-color:#f1f5f8;
-    font-family:Microsoft YaHei, SimSun;
-    color:#242424;
-    height:100%;
-  }
   .bga{
     color:#f2f1f1;
     text-decoration:none;
