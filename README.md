@@ -5,7 +5,7 @@
 
 后端项目[navigation-mange](https://github.com/startoffly/navigation-mange)
 
-开发博客[暂时缺省]()
+开发博客[扫把的飞天壁垒](http://blog.xinmove.com)
 
 
 
