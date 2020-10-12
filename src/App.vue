@@ -3,11 +3,11 @@
     <!--    <img src="./assets/logo.png">-->
     <!--    <router-link to="/footer">尾页</router-link>-->
     <!--  header  -->
-    <headerVue id="xinmove-header"></headerVue>
+    <headerVue class="xinmove-header"></headerVue>
     <!--  body  -->
-    <bodyVue id="xinmove-body"></bodyVue>
+    <bodyVue class="xinmove-body"></bodyVue>
     <!--  footer  -->
-    <footerVue id="xinmove-footer"></footerVue>
+    <footerVue class="xinmove-footer"></footerVue>
 
   </div>
 
