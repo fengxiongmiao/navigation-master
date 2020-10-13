@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Header from '../pages/header'
-import Body from '../pages/body'
-import Footer from '../pages/footer'
-import Menu1 from '../pages/index-menu/menu1.vue'
+import Header from '../components/header'
+import Body from '../components/body'
+import Footer from '../components/footer'
+import Menu1 from '../components/index-menu/menu1.vue'
 
 Vue.use(Router);
 

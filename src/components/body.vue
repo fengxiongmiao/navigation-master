@@ -1,5 +1,5 @@
 <template>
-  <div id="xinmove-body">
+  <div class="xinmove-body">
     <router-view/>
   </div>
 
@@ -18,7 +18,7 @@
     width: auto;
     min-height: 100%;
     margin-top: 40px;
-    margin-bottom: 69%;
+    margin-bottom: 80%;
     padding-bottom: 30px;
     max-width: 1170px;
     min-width: 600px;

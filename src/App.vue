@@ -15,9 +15,9 @@
 
 <script>
     import {headInfo,dataUrl} from './vuex/request';
-    import headerVue from './pages/header-body-test';
-    import footerVue from './pages/footer';
-    import bodyVue from './pages/body';
+    import headerVue from './components/header';
+    import footerVue from './components/footer';
+    import bodyVue from './components/body';
     export default {
         name: 'App',
         // metaInfo: {
@@ -119,6 +119,110 @@
   *:-ms-input-placeholder {
     /* IE10+ */
     color: #929292
+  }
+
+
+  /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+  ::-webkit-scrollbar
+  {
+    width: 5px;
+    height:5px;
+    background-color: #333;
+  }
+
+  /*定义滚动条轨道 内阴影+圆角*/
+  ::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    background-color: #333;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  ::-webkit-scrollbar-thumb
+  {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #a2a2a2;
+  }
+
+  /*定义滑块 内阴影+圆角*/
+  ::-webkit-scrollbar-thumb:hover
+  {
+    background-color: #b2b2b2;
+  }
+
+
+  .nma{
+    color:#242424;
+    text-decoration:none;
+    transition-property: color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    transition-delay: initial;
+    display:block;
+  }
+  .nma:hover{
+    color:#478cdc;
+  }
+  .nma:active{
+    color:#376eae;
+  }
+
+  .bga{
+    color:#f2f1f1;
+    text-decoration:none;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+    transition-delay: initial;
+    cursor:pointer;
+    display:block;
+  }
+  .bga:hover{
+    background-color:#478cdc;
+  }
+  .bga:active{
+    background-color:#376eae;
+  }
+
+  ::-moz-selection{ /*���Firefox*/
+    background:#f2f1f1;
+    color:#000;
+  }
+
+  ::selection {
+    background:#f2f1f1;
+    color:#000;
+  }
+
+  /*默认样式，主要是position:fixed实现屏幕绝对定位*/
+  #gotoTop{
+    display:none;
+    position:fixed;
+    right: 30px; bottom: 50px;
+    cursor:pointer;
+    width:50px;
+    height:50px;
+    text-align:center;
+    line-height:50px;
+    font-size:18px;
+    background-color: #ffffff;
+    transition: background-color .2s ease-in-out;
+    border: 1px solid #ebf1f5;
+    border-radius: 100%;
+  }
+  /*用CSS表达式(expression)来实现ie6下position:fixed效果*/
+  #gotoTop{_position:absolute;_top:expression(documentElement.scrollTop + documentElement.clientHeight * 3/4 + "px")}
+  /*鼠标进入的反馈效果*/
+  #gotoTop:hover{
+    background-color: #478cdc;
+    color:#f2f2f2;
+  }
+
+  /* ============== ic ============*/
+  .icon{
+    padding-right:5px;
   }
 
 
