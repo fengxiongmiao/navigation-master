@@ -7,15 +7,12 @@ const proxyPrefix ='/test';//项目名
 const port = '6060';
 
 export const dataUrl = 'http://'+(isLocal? 'localhost:':'www.xinmove.com')+port+(isAddProject?proxyPrefix:'');
-console.log("请求地址："+dataUrl);
 
 // 如果是本地调试（url中带有 localhost 或者 ip地址 ）自动加上 /eventsMuseum/ ，否则 （线上地址，生产地址） 加上 /
 export const testDataUrl =
   window.location.host.search(/(localhost|\d+\.\d+\.\d+\.\d+)/g) !== -1
     ? proxyPrefix
     : '/';
-console.log("请求地址2："+testDataUrl);
-console.log("请求地址3："+window.location.host);
 
 axios.interceptors.request.use(function(config) {
   // 在发送请求之前做些什么，例如加入token
@@ -51,9 +48,9 @@ export const testInfo = (option, callback) => {
 // 请求格式化
 export const requestFormat = (option, callback, method, url) => {
   if (typeof option === 'function') {
-    url = method
-    method = callback
-    callback = option
+    url = method;
+    method = callback;
+    callback = option;
     option = {}
   }
   axios({
@@ -67,7 +64,7 @@ export const requestFormat = (option, callback, method, url) => {
     .catch(res => {
       console.error(res.message)
     })
-}
+};
 
 
 

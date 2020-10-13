@@ -2,8 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Header from '../components/header'
 import Body from '../components/body'
+import Left from '../components/body-left'
+import Middle from '../components/body-middle'
+import Right from '../components/body-right'
 import Footer from '../components/footer'
 import Menu1 from '../components/index-menu/menu1.vue'
+import HomePage from '../components/index-menu/homePage.vue'
 
 Vue.use(Router);
 
@@ -18,7 +22,13 @@ export default new Router({
     {
       path: '/body',
       name: 'Body',
-      component: Body
+      component: Body,
+      components: {
+        // default:Main,
+        bodyMiddle: Middle,
+        bodyLeft: Left,
+        bodyRight: Right,
+      }
     },
     {
       path: '/footer',
@@ -29,7 +39,13 @@ export default new Router({
       path: '/menu1',
       name: 'Menu1',
       component: Menu1
+    },
+    {
+      path: '/homePage',
+      name: 'HomePage',
+      component: HomePage
     }
+
 
   ]
 })

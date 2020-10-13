@@ -6,7 +6,7 @@
       </div>
       <div class="xinmove-nav-wrap">
         <div class="xinmove-header-card">
-          <a @click="routerPush('/')" class="bga " v-bind:class="{ 'xinmove-header-active' : isActive }">
+          <a @click="routerPush('/homePage')" class="bga " :class="{ 'xinmove-header-active' : active('/homePage') }">
             <div class="xinmove-header-cn">主页</div>
             <div class="xinmove-header-en">index</div>
           </a>
@@ -14,7 +14,7 @@
         <!--    key为序号    -->
         <div class="xinmove-header-card" v-for="(value,key) in menuInList"
              v-bind:key=value.id >
-          <a :id=value.id @click="routerPush(value.url)" class="bga ">
+          <a :id=value.id @click="routerPush(value.url)" class="bga " :class="{ 'xinmove-header-active' : active(value.url)}">
             <div class="xinmove-header-cn">{{value.name}}</div>
             <div class="xinmove-header-en">{{value.en_name}}</div>
             <!-- component是一个占位符，:is属性是指定组件的名称 -->
@@ -56,21 +56,28 @@
                 //内容菜单位
                 menuInList: [
                     {id: 1, name: '菜单1', en_name: 'menu1', url: '/menu1'},
-                    {id: 2, name: '菜单2', en_name: 'menu2', url: 'http://www.baidu.com'},
                 ],
                 //外部菜单位
                 menuOutList: [
                     {id: 11, name: '外链1', en_name: 'shucai', url: 'http://www.baidu.com'},
-                    {id: 12, name: '外链2', en_name: 'nalao', url: 'http://www.baidu.com'},
                     {id: 13, name: '去博客看看', en_name: 'blog', url: 'http://blog.xinmove.com'}
                 ],
                 isActive: true
             }
         },
+        created() {
+
+        },
         methods:{
             routerPush (url) {
-                console.log("routerPush方法调用："+url)
-                this.$router.push({ path: url })
+                // console.log("routerPush方法调用："+url);
+                this.$router.push({ path: url });
+
+            },
+            active(path){//当前页判断
+                let sis = path===(this.$route.path.trim());
+                // console.log("active方法调用："+sis+",path:"+path+",route.path:"+(this.$route.path.trim()));
+                return path===(this.$route.path.trim());
             }
         }
 

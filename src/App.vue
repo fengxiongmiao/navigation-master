@@ -59,7 +59,7 @@
                 headInfo({}, res => {
                     // console.log(res)
                     let data = res.data.data;
-                    console.log("请求数据为：" + JSON.stringify(data));
+                    // console.log("请求数据为：" + JSON.stringify(data));
                     this.title = data.title;
                     this.description = data.description;
                     this.keywords = data.keywords;
