@@ -2,7 +2,7 @@
   <div class="card-dwg-hrefc">
     <div>
       <div class="card-dwg-title">
-        <span><i class="icon fa fa-youtube-play fa-lg fa-fw"></i>音乐 / 电影 / 番剧 / 种子资源</span>
+        <span><i class="icon fa fa-hand-peace-o fa-lg fa-fw"></i>我的网站</span>
       </div>
       <!--    key为序号    -->
       <a class="card-dwg-href" v-for="(value,key) in cards" target="_blank" :href=value.url
@@ -13,6 +13,21 @@
           <div class="card-dwg-href-abstract" :title=value.description>{{value.description}}</div>
         </div>
       </a>
+      <div v-for="">
+        <div class="card-dwg-title">
+          <span><i class="icon fa fa-free-code-camp fa-lg fa-fw"></i>高频使用</span>
+        </div>
+        <a class="card-dwg-href" v-for="(value,key) in cards" target="_blank" :href=value.url
+           v-bind:key=value.id>
+          <div class="card-dwg-href-div">
+            <div class="card-dwg-href-img" :style="'background-image: url('+value.img+');'"></div>
+            <div class="card-dwg-href-name">{{value.name}}</div>
+            <div class="card-dwg-href-abstract" :title=value.description>{{value.description}}</div>
+          </div>
+        </a>
+      </div>
+
+
     </div>
   </div>
 </template>
@@ -55,33 +70,11 @@
                     this.cards = data;
                 })
             }
-            // ,
-            // initData() {
-            //     this.axios.get(dataUrl+'/test/getInfo').then((resp) => {
-            //         const data = resp.data.data;
-            //         console.log("二次请求请求数据为：" + JSON.stringify(data));
-            //         // 设置title时 metaInfo 会同时更新
-            //         this.title = data.title;
-            //         this.description = data.decription
-            //     })
-            // }
         }
     }
 </script>
 
 <style scoped>
-  /* ============== body =========== */
-  .xinmove-body {
-    margin: 0 auto;
-    width: auto;
-    min-height: 100%;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    padding-bottom: 30px;
-    max-width: 1170px;
-    min-width: 600px;
-  }
-
   /* ============== card =========== */
 
   .card-dwg-title {
