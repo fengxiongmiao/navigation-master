@@ -39,9 +39,14 @@ export const bus = new Vue();
 export const headInfo = (option, callback) => {
   requestFormat(option, callback, 'get', dataUrl + '/test/getHeadInfo')
 };
-// 获取头部信息
+// 获取测试数据信息
 export const testInfo = (option, callback) => {
   requestFormat(option, callback, 'get', dataUrl + '/test/getInfo')
+};
+
+//主页数据
+export const getCardsByGroup = (option, callback) => {
+  requestFormat(option, callback, 'get', dataUrl + '/test/getCardsByGroup?gids=2&gids=3')
 };
 
 
