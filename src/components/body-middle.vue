@@ -11,8 +11,8 @@
 </script>
 
 <style scoped>
-  .xinmove-body-middle{
-    right: 45%;
-    top: 50%;
-  }
+  /*.xinmove-body-middle{*/
+  /*  right: 45%;*/
+  /*  top: 50%;*/
+  /*}*/
 </style>

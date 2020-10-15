@@ -33,7 +33,7 @@
     max-width: 1170px;
     min-width: 600px;
     /* 并列 */
-    display: flex
+    /*display: flex*/
   }
 
 

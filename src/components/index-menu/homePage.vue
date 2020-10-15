@@ -1,77 +1,53 @@
 <template xmlns:v-bind="http://www.w3.org/1999/xhtml">
   <div class="card-dwg-hrefc">
-    <div>
+    <div  v-for="(value,key) in groups">
       <div class="card-dwg-title">
-        <span><i class="icon fa fa-hand-peace-o fa-lg fa-fw"></i>我的网站</span>
+        <span><i class="icon fa-lg fa-fw" :class=value.icon></i>{{value.name}}</span>
       </div>
       <!--    key为序号    -->
-      <a class="card-dwg-href" v-for="(value,key) in cards" target="_blank" :href=value.url
-         v-bind:key=value.id>
+      <a class="card-dwg-href" v-for="(valueC,keyC) in value.cardList" target="_blank" :href=valueC.url
+         v-bind:key=valueC.id>
         <div class="card-dwg-href-div">
-          <div class="card-dwg-href-img" :style="'background-image: url('+value.img+');'"></div>
-          <div class="card-dwg-href-name">{{value.name}}</div>
-          <div class="card-dwg-href-abstract" :title=value.description>{{value.description}}</div>
+          <div class="card-dwg-href-img" :style="'background-image: url('+valueC.img+');'"></div>
+          <div class="card-dwg-href-name">{{valueC.name}}</div>
+          <div class="card-dwg-href-abstract" :title=valueC.description>{{valueC.description}}</div>
         </div>
       </a>
-      <div v-for="">
-        <div class="card-dwg-title">
-          <span><i class="icon fa fa-free-code-camp fa-lg fa-fw"></i>高频使用</span>
-        </div>
-        <a class="card-dwg-href" v-for="(value,key) in cards" target="_blank" :href=value.url
-           v-bind:key=value.id>
-          <div class="card-dwg-href-div">
-            <div class="card-dwg-href-img" :style="'background-image: url('+value.img+');'"></div>
-            <div class="card-dwg-href-name">{{value.name}}</div>
-            <div class="card-dwg-href-abstract" :title=value.description>{{value.description}}</div>
-          </div>
-        </a>
-      </div>
-
-
     </div>
   </div>
 </template>
 
 <script>
-    import {testInfo, dataUrl} from '../../vuex/request';
+  import {getCardsByGroup, dataUrl} from '../../vuex/request';
 
-    export default {
-        name: 'menu1',
-        // metaInfo: {
-        //     title: '测试标题2',
-        //     meta: [
-        //         {charset: 'utf-8'},
-        //         {name: 'keywords', content: '关键词1 关键词er 关键词三'},
-        //         {name: 'description', content: '测试简介3'},
-        //         {name: 'author', content: 'startoffly'}
-        //     ]
-        // },
-        data() {
-            return {
-                cards: []
-            }
-        },
+  export default {
+    name: 'menu1',
+    data() {
+      return {
+        groups: []
+      }
+    },
 
-        created() {
-            // this.initData();
-            this.createdRequest();
-        },
-        methods: {
-            createdRequest() {
-                testInfo({}, res => {
-                    // console.log(res)
-                    let data = res.data.data;
-                    console.log("请求数据为：" + JSON.stringify(data));
-                    // for(let index in data) {
-                    //     array[index].name;
-                    //     console.log(index,array[index]);
-                    //
-                    // }
-                    this.cards = data;
-                })
-            }
-        }
+    created() {
+      // this.initData();
+      this.createdRequest();
+    },
+    methods: {
+      createdRequest() {
+        getCardsByGroup({}, res => {
+          // console.log(res)
+          let data = res.data.data;
+          console.log("请求数据为：" + JSON.stringify(data));
+          // for(let index in data) {
+          //     array[index].name;
+          //     console.log(index,array[index]);
+          //
+          // }
+          this.groups = data;
+        })
+      }
     }
+  }
 </script>
 
 <style scoped>

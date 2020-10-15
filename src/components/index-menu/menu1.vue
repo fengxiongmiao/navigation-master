@@ -14,6 +14,20 @@
         </div>
       </a>
     </div>
+    <div>
+      <div class="card-dwg-title">
+        <span><i class="icon fa fa-youtube-play fa-lg fa-fw"></i>音乐 / 电影 / 番剧 / 种子资源</span>
+      </div>
+      <!--    key为序号    -->
+      <a class="card-dwg-href" v-for="(value,key) in cards" target="_blank" :href=value.url
+         v-bind:key=value.id>
+        <div class="card-dwg-href-div">
+          <div class="card-dwg-href-img" :style="'background-image: url('+value.img+');'"></div>
+          <div class="card-dwg-href-name">{{value.name}}</div>
+          <div class="card-dwg-href-abstract" :title=value.description>{{value.description}}</div>
+        </div>
+      </a>
+    </div>
   </div>
 </template>
 
