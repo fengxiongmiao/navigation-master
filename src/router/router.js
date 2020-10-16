@@ -7,13 +7,12 @@ import Middle from '../components/body-middle'
 import Right from '../components/body-right'
 import Footer from '../components/footer'
 import Menu1 from '../components/index-menu/menu1.vue'
-import HomePage from '../components/index-menu/homePage.vue'
+import HomePage from '../components/index-menu/home-page.vue'
 
 Vue.use(Router);
 
 export default new Router({
   routes: [
-
     {
       path: '/header',
       name: 'Header',
@@ -41,7 +40,12 @@ export default new Router({
       component: Menu1
     },
     {
-      path: '/homePage',
+      path: '/home-page',
+      name: 'HomePage',
+      component: HomePage
+    },
+    {
+      path: '/',
       name: 'HomePage',
       component: HomePage
     }

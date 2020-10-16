@@ -36,15 +36,6 @@
 
     export default {
         name: 'menu1',
-        // metaInfo: {
-        //     title: '测试标题2',
-        //     meta: [
-        //         {charset: 'utf-8'},
-        //         {name: 'keywords', content: '关键词1 关键词er 关键词三'},
-        //         {name: 'description', content: '测试简介3'},
-        //         {name: 'author', content: 'startoffly'}
-        //     ]
-        // },
         data() {
             return {
                 cards: []
@@ -52,33 +43,16 @@
         },
 
         created() {
-            // this.initData();
             this.createdRequest();
         },
         methods: {
             createdRequest() {
                 testInfo({}, res => {
-                    // console.log(res)
                     let data = res.data.data;
                     console.log("请求数据为：" + JSON.stringify(data));
-                    // for(let index in data) {
-                    //     array[index].name;
-                    //     console.log(index,array[index]);
-                    //
-                    // }
                     this.cards = data;
                 })
             }
-            // ,
-            // initData() {
-            //     this.axios.get(dataUrl+'/test/getInfo').then((resp) => {
-            //         const data = resp.data.data;
-            //         console.log("二次请求请求数据为：" + JSON.stringify(data));
-            //         // 设置title时 metaInfo 会同时更新
-            //         this.title = data.title;
-            //         this.description = data.decription
-            //     })
-            // }
         }
     }
 </script>

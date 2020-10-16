@@ -1,5 +1,6 @@
 import Vue from 'Vue';
 import axios from 'axios'
+import qs from 'qs'
 
 const isAddProject = false;
 const isLocal = true;
@@ -46,7 +47,9 @@ export const testInfo = (option, callback) => {
 
 //主页数据
 export const getCardsByGroup = (option, callback) => {
-  requestFormat(option, callback, 'get', dataUrl + '/test/getCardsByGroup?gids=2&gids=3')
+  let params = {gids:[1,2]};
+  requestGet(option,params,dataUrl + '/test/getCardsByGroup',callback);
+  // requestFormat(option, callback, 'get', dataUrl + '/test/getCardsByGroup')
 };
 
 
@@ -71,5 +74,39 @@ export const requestFormat = (option, callback, method, url) => {
     })
 };
 
+export const requestGet = (option,params, url, callback) => {
+  axios({
+    url: url,
+    method: "GET",
+    params: params ,
+    paramsSerializer: params => {
+    return qs.stringify(params, { indices: false })
+  },
+    ...option
+  }).then(
+    response => {
+      callback(response, true)
+    },
+    response => {
+      callback('请求失败', false)
+    }
+  )
+};
+
+export const requestPost = (option, data, url,callback) => {
+  axios({
+    url: url,
+    method: "POST",
+    data: data,
+    ...option
+  }).then(
+    response => {
+      callback(response, true)
+    },
+    response => {
+      callback('请求失败', false)
+    }
+  )
+};
 
 

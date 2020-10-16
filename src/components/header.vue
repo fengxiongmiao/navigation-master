@@ -6,7 +6,8 @@
       </div>
       <div class="xinmove-nav-wrap">
         <div class="xinmove-header-card">
-          <a @click="routerPush('/homePage')" class="bga " :class="{ 'xinmove-header-active' : active('/homePage') }">
+          <a @click="routerPush('/home-page')" class="bga "
+             :class="{ 'xinmove-header-active' : active('/home-page')|| active('/')}">
             <div class="xinmove-header-cn">主页</div>
             <div class="xinmove-header-en">index</div>
           </a>

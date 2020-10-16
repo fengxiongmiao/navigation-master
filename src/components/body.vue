@@ -29,11 +29,12 @@
     margin-bottom: 10%;
     /*margin-left: 50px;*/
     /*下边距*/
-    padding-bottom: 800px;
+    /*padding-bottom: 800px;*/
     max-width: 1170px;
     min-width: 600px;
     /* 并列 */
     /*display: flex*/
+
   }
 
 

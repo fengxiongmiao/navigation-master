@@ -91,7 +91,8 @@
     padding:0;
     margin:0;
     border:0;
-    background-color:#f1f5f8;
+    background-color: rgba(241,245,246,0.5);
+    /*background-color:#f1f5f8;*/
     font-family:Microsoft YaHei, SimSun;
     color:#242424;
     height:100%;
