@@ -9,7 +9,6 @@
 </template>
 
 <script>
-    import '../../vuex/canvas';
     export default {
         name: "",
         created(){

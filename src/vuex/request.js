@@ -52,6 +52,13 @@ export const getCardsByGroup = (option, callback) => {
   // requestFormat(option, callback, 'get', dataUrl + '/test/getCardsByGroup')
 };
 
+//排除特定分组的数据
+export const getCardsNoGroup = (option, callback) => {
+  let params = {gids:[2,3]};
+  requestGet(option,params,dataUrl + '/test/getCardsNoGroup',callback);
+  // requestFormat(option, callback, 'get', dataUrl + '/test/getCardsByGroup')
+};
+
 
 // 请求格式化
 export const requestFormat = (option, callback, method, url) => {

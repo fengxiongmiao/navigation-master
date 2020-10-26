@@ -15,20 +15,14 @@
           </div>
         </a>
       </div>
-  </div>
-    <personalProfileVue></personalProfileVue>
+    </div>
   </div>
 </template>
 
 <script>
-    import {getCardsByGroup, dataUrl} from '../../vuex/request';
-    import personalProfileVue from './personal-profile';
-
+    import {getCardsNoGroup, dataUrl} from '../../vuex/request';
     export default {
-        name: 'home-page',
-        components: {
-            personalProfileVue
-        },
+        name: "collections",
         data() {
             return {
                 groups: []
@@ -43,7 +37,7 @@
                 return 0===hide;
             },
             createdRequest() {
-                getCardsByGroup({}, res => {
+                getCardsNoGroup({}, res => {
                     // console.log(res)
                     let data = res.data.data;
                     console.log("请求数据为：" + JSON.stringify(data));

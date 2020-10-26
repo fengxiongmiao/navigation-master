@@ -7,6 +7,7 @@ import Middle from '../components/body-middle'
 import Right from '../components/body-right'
 import Footer from '../components/footer'
 import Menu1 from '../components/index-menu/menu1.vue'
+import Collections from '../components/index-menu/collections.vue'
 import HomePage from '../components/index-menu/home-page.vue'
 
 Vue.use(Router);
@@ -38,6 +39,10 @@ export default new Router({
       path: '/menu1',
       name: 'Menu1',
       component: Menu1
+    },{
+      path: '/collections',
+      name: 'Collections',
+      component: Collections
     },
     {
       path: '/home-page',

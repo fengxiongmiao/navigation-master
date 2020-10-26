@@ -56,11 +56,12 @@
             return {
                 //内容菜单位
                 menuInList: [
-                    {id: 1, name: '菜单1', en_name: 'menu1', url: '/menu1'},
+                    // {id: 1, name: '菜单1', en_name: 'menu1', url: '/menu1'},
+                    {id: 1, name: '收藏', en_name: 'collections', url: '/collections'},
                 ],
                 //外部菜单位
                 menuOutList: [
-                    {id: 11, name: '外链1', en_name: 'shucai', url: 'http://www.baidu.com'},
+                    // {id: 11, name: '外链1', en_name: 'shucai', url: 'http://www.baidu.com'},
                     {id: 13, name: '去博客看看', en_name: 'blog', url: 'http://blog.xinmove.com'}
                 ],
                 isActive: true
