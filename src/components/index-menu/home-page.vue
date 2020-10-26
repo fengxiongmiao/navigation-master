@@ -1,7 +1,7 @@
 <template xmlns:v-bind="http://www.w3.org/1999/xhtml">
   <div>
-    <div class="card-dwg-hrefc">
-      <div v-for="(value,key) in groups">
+    <div class="card-dwg-hrefc" >
+      <div v-for="(value,key) in groups" v-if="isHide(value.hide)">
         <div class="card-dwg-title">
           <span><i class="icon fa-lg fa-fw" :class=value.icon></i>{{value.name}}</span>
         </div>
@@ -39,6 +39,9 @@
             this.createdRequest();
         },
         methods: {
+            isHide(hide){
+                return 0===hide;
+            },
             createdRequest() {
                 getCardsByGroup({}, res => {
                     // console.log(res)

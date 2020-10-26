@@ -6,6 +6,11 @@ import router from './router/router.js'
 import axios from 'axios'
 import qs from 'qs'
 
+// import VueScrollmagic from 'vue-scrollmagic'
+// Vue.use(VueScrollmagic);
+import gsap from 'gsap'
+Vue.prototype.gsap = gsap;
+
 
 //路由中添加头部head管理
 import Meta from 'vue-meta'

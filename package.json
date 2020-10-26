@@ -14,12 +14,14 @@
   },
   "dependencies": {
     "axios": "^0.20.0",
+    "jquery": "^3.5.1",
     "qs": "^6.9.4",
     "qs.js": "^0.1.12",
     "vue": "^2.6.12",
     "vue-axios": "^2.1.5",
     "vue-meta": "^2.4.0",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vue-scrollmagic": "^1.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -43,6 +45,7 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.4",
     "friendly-errors-webpack-plugin": "^1.6.1",
+    "gsap": "^3.5.1",
     "html-webpack-plugin": "^2.30.1",
     "jest": "^22.0.4",
     "jest-serializer-vue": "^0.3.0",

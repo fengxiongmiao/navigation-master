@@ -47,7 +47,7 @@ export const testInfo = (option, callback) => {
 
 //主页数据
 export const getCardsByGroup = (option, callback) => {
-  let params = {gids:[1,2]};
+  let params = {gids:[2,3]};
   requestGet(option,params,dataUrl + '/test/getCardsByGroup',callback);
   // requestFormat(option, callback, 'get', dataUrl + '/test/getCardsByGroup')
 };
